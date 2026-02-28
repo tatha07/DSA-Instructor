@@ -14,11 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
         userInput.value = '';
         const loadingId = addMessage('Processing request...', 'bot-msg', 'SYSTEM');
         try {
-             const response = await fetch('https://dsa-instructor-pearl.vercel.app/api/ask', {
-             method: 'POST',
-             headers: { 'Content-Type': 'application/json' },
-             body: JSON.stringify({ question: text })
-             });
+         const response = await fetch('https://dsa-instructor-pearl.vercel.app/api/ask?v=' + Date.now(), {
+         method: 'POST',
+         headers: { 'Content-Type': 'application/json' },
+         body: JSON.stringify({ question: text })
+         });
             const data = await response.json();
             document.getElementById(loadingId).remove(); 
             processResponse(data.text);
