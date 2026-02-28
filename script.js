@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         userInput.value = '';
         const loadingId = addMessage('Processing request...', 'bot-msg', 'SYSTEM');
         try {
-             const response = await fetch('https://dsa-instructor-pearl.vercel.app/', {
+             const response = await fetch('https://dsa-instructor-pearl.vercel.app/api/ask', {
              method: 'POST',
              headers: { 'Content-Type': 'application/json' },
              body: JSON.stringify({ question: text })
