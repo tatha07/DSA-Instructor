@@ -14,11 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
         userInput.value = '';
         const loadingId = addMessage('Processing request...', 'bot-msg', 'SYSTEM');
         try {
-            const response = await fetch('http://localhost:3000/api/ask', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ question: text })
-            });
+             const response = await fetch('https://your-vercel-project-name.vercel.app/api/ask', {
+             method: 'POST',
+             headers: { 'Content-Type': 'application/json' },
+             body: JSON.stringify({ question: text })
+             });
             const data = await response.json();
             document.getElementById(loadingId).remove(); 
             processResponse(data.text);
