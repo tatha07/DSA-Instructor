@@ -24,7 +24,4 @@ app.post('/api/ask', async (req, res) => {
         res.status(500).json({ error: "Failed to fetch response from the Strict Instructor." });
     }
 });
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}`);
-});
+export default app;
