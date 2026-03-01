@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA INSTRUCTOR</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo">
+                <span class="glow-text">DSA INSTRUCTOR</span>
+            </div>
+            <div class="status-indicator">
+                <div class="pulse-dot"></div>
+                ONLINE
+            </div>
+        </header>
+        <main class="workspace">
+            <section class="left-pane">
+                <div class="pane-header">Terminal</div>
+                <div class="chat-container" id="chat-box">
+                    <div class="message bot-msg">
+                        <div class="msg-sender">SYSTEM</div>
+                        <div class="msg-content">Initialization complete. Drop a LeetCode problem. Do not test my patience today.</div>
+                    </div>
+                </div>
+                <div class="input-area">
+                    <input type="text" id="user-input" placeholder="Try to stump me, amateur..." autocomplete="off">
+                    <button id="send-btn">EXECUTE</button>
+                </div>
+            </section>
+            <section class="right-pane">
+                <div class="pane-header">Source Code</div>
+                <div id="code-box" class="code-display-area">
+                    <div class="empty-state">
+                        > Awaiting valid problem parameters...
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

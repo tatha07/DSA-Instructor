@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Instructor</title>
+    <link rel="stylesheet" href="css/mobile.css">
+    <script src="js/mobile.js"></script>
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="glow-text">DSA Instructor</div>
+            <div class="status-indicator">
+                <div class="pulse-dot"></div> ONLINE
+            </div>
+        </header>
+
+        <main class="workspace">
+            <section class="left-pane">
+                <div class="pane-header">Terminal</div>
+                <div class="chat-container" id="chat-box">
+                    </div>
+                
+                <div class="input-area">
+                    <input type="text" id="user-input" placeholder="Try to stump me, amateur..." autocomplete="off">
+                    <button id="send-btn" onclick="sendMessage()">SEND</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="mobile.js"></script>
+</body>
+</html>

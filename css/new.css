@@ -1,0 +1,110 @@
+:root {
+    --bg-dark: #0a0e17;
+    --accent-cyan: #00f0ff;
+}
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #e2e8f0;
+    background-color: var(--bg-dark);
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.05) 0%, transparent 50%),
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 30px 30px, 30px 30px;
+}
+.color-changing-box {
+    padding: 50px 60px;
+    border-radius: 8px;
+    background: linear-gradient(-45deg, #bc13fe, #ff0055, #0011ff, #00ffcc);
+    background-size: 400% 400%; 
+    animation: liquidBackground 8s ease infinite; 
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9), inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+@keyframes liquidBackground {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.color-changing-box h1 {
+    margin-top: 0;
+    font-family: monospace;
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+}
+.color-changing-box p {
+    font-family: monospace;
+    font-size: 1rem;
+    color: #e2e8f0;
+    margin-bottom: 35px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+.btn-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+.gate-btn {
+    background: rgba(10, 14, 23, 0.9);
+    color: var(--accent-cyan);
+    border: 1px solid var(--accent-cyan);
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: monospace;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+}
+.gate-btn:hover {
+    background: var(--accent-cyan);
+    color: #000;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+    transform: translateY(-2px);
+}
+.portal-transition {
+    animation: warpSpeed 1.5s cubic-bezier(0.5, -0.5, 0.2, 1.5) forwards;
+    pointer-events: none; 
+}
+/* --- 3D TRANSITION EFFECTS --- */
+
+.portal-transition {
+    /* Slowed down from 0.8s to 1.5s */
+    animation: warpSpeed 1.5s cubic-bezier(0.5, -0.5, 0.2, 1.5) forwards;
+    pointer-events: none; 
+}
+
+@keyframes warpSpeed {
+    0% {
+        transform: perspective(1000px) translateZ(0) rotateY(0deg) scale(1);
+        opacity: 1;
+    }
+    40% {
+        /* Pulls back deeper and starts to glow */
+        transform: perspective(1000px) translateZ(-400px) rotateY(-15deg) scale(0.8);
+        opacity: 0.9;
+        filter: hue-rotate(90deg) brightness(1.5); 
+    }
+    60% {
+        /* Hangs in the air for a fraction of a second to build suspense */
+        transform: perspective(1000px) translateZ(-400px) rotateY(-15deg) scale(0.8);
+        opacity: 0.9;
+        filter: hue-rotate(180deg) brightness(2); 
+    }
+    100% {
+        /* Shoots past the camera */
+        transform: perspective(1000px) translateZ(1500px) rotateY(45deg) scale(4);
+        opacity: 0;
+        filter: blur(10px);
+    }
+}
